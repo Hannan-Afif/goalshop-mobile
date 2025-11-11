@@ -1,6 +1,6 @@
 # GOALSHOP
 
-## TUGAS 7 (JAWABAN)
+## TUGAS 7
 
 ### 1. Widget Tree dan Hubungan Parent-Child
 
@@ -64,7 +64,7 @@ ItemCard
 - **Icon**: Menampilkan ikon.
 - **Padding**: Memberi jarak antara ikon dan teks.
 - **SnackBar**: Menampilkan pesan singkat (mirip notifikasi di bagian bawah) ketika kartu ditekan. 
-- **ScaffoldMessenger**: Menangani tampilan dan penghapusan `SnackBar`.
+- **ScaffoldMessenger**: Menangani tampilan dan penghapusan `SnackBar`. 
 
 ### 3. Widget MaterialApp
 
@@ -148,4 +148,43 @@ Widget build(BuildContext context) {
 
 Konsep *hot reload* adalah kita bisa melihat perubahan kdoe secara langsung tanpa kehilangan state suatu aplikasi.
 sementara, konsep *hot restart* adalah mengulang menjalankan aplikasi dari awal, menghapus semua state yang ada.
+
+## TUGAS 8
+### 1. Navigator.push() dan Navigator.pushReplacement()
+
+`Navigator.push()`:
+- Digunakan untuk menambahkan halaman baru ke atas stack navigasi.
+- Halaman sebelumnya tetap tersimpan di dalam stack, sehingga user bisa balik ke halaman sebelumnya dengan menggunakan tombol back
+
+Kasus: Digunakan saat user ingin navigasi bersifat sementara. Misalnya, dari list produk ke detail produk, agar mereka bisa balik ke list produk dengan mudah.
+
+`Navigator.pushReplacement()`:
+- Digunakan untuk mengganti halaman saat ini dengan halaman baru.
+
+- Halaman sebelumnya dihapus dari stack, sehingga tombol back tidak akan kembali ke halaman tersebut.
+
+Kasus: Digunakan saat user berhasil login atau checkout, sehingga tidak kembali ke halaman tersebut.
+
+### 2. Pemanfaatan Hierarchy Widget (Scaffold, AppBar, Drawer)
+
+Penjelasan:
+
+- **Scaffold**: menyediakan kerangka dasar halaman (AppBar, Drawer, FloatingActionButton, dll).
+
+- **AppBar**: berisi judul, tombol aksi (search, dll), dan konsisten di setiap halaman.
+
+- **Drawer**: berfungsi sebagai menu navigasi ke halaman lain (misalnya Home, Profile, dll).
+
+### 3. Kelebihan Layout Widget (Padding, SingleChildScrollView, ListView) dalam menampilkan elemen-elemeen form
+
+Penjelasan:
+
+- **Padding**: Memberi jarak antar elemen agar tampilan lebih rapi dan tidak terlalu rapat ke tepi layar.
+- **SingleChildScrollView**: Mengatasi overflow (misalnya saat keyboard muncul) dengan memungkinkan halaman di-scroll.
+- **ListView**: Cocok untuk form dengan banyak input atau komponen yang bersifat dinamis (misalnya daftar produk di keranjang).
+
+### 4. Penyesuaian warna tema aplikasi sebagai identitas visual yang konsisten dengan brand toko
+
+Dengan menggunakan widget `ThemeData`, widget-widget seperti AppBar, ElevatedButton, dsb akan bersifat konsisten di seluruh page. Karena, `ThemeData` menentukan gaya default global (keseluruhan) aplikasi. 
+
 

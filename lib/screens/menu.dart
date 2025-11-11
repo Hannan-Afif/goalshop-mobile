@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goalshop/widgets/left_drawer.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
@@ -19,8 +20,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       // AppBar adalah bagian atas halaman yang menampilkan judul.
       appBar: AppBar(
-        // Judul aplikasi "Football News" dengan teks putih dan tebal.
-        leading: Icon(Icons.sports_baseball_sharp),
+        // Judul aplikasi "Goalshop" dengan teks putih dan tebal.
         title: const Text(
           'Goalshop',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
@@ -43,6 +43,7 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
+      drawer: LeftDrawer(),
       // Body halaman dengan padding di sekelilingnya.
       body: Padding(
         padding: const EdgeInsets.all(16.0),
