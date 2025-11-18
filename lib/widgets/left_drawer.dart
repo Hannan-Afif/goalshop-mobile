@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:goalshop/screens/menu.dart';
+import 'package:goalshop/screens/my_product_entry_list.dart';
 import 'package:goalshop/screens/productlist_form.dart';
+import 'package:goalshop/screens/product_entry_list.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -54,11 +56,36 @@ class LeftDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const ProductFormPage()),
+                MaterialPageRoute(
+                  builder: (context) => const ProductFormPage(),
+                ),
               );
-              /*
-    setelah halaman ProductFormPage sudah dibuat.
-    */
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.shopping_cart),
+            title: const Text('Product List'),
+            onTap: () {
+              // Route to product list page
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProductEntryListPage(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.shopping_cart_checkout),
+            title: const Text('My Product List'),
+            onTap: () {
+              // Route to product list page
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MyProductEntryListPage(),
+                ),
+              );
             },
           ),
         ],
