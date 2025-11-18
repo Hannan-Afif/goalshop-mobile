@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:goalshop/screens/login.dart';
-import 'package:goalshop/screens/menu.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
