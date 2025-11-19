@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:goalshop/screens/login.dart';
+import 'package:goalshop/palette/goalshop_palette.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
@@ -20,8 +21,10 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     final request = context.watch<CookieRequest>();
     return Scaffold(
+      backgroundColor: GoalshopPalette.slate900,
       appBar: AppBar(
         title: const Text('Register'),
+
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
@@ -149,7 +152,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
                       minimumSize: Size(double.infinity, 50),
-                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      backgroundColor: GoalshopPalette.slate700,
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
                     ),
                     child: const Text('Register'),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goalshop/palette/goalshop_palette.dart';
 import 'package:goalshop/screens/menu.dart';
 import 'package:goalshop/screens/my_product_entry_list.dart';
 import 'package:goalshop/screens/productlist_form.dart';
@@ -12,26 +13,37 @@ class LeftDrawer extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: Colors.blue),
+          DrawerHeader(
+            decoration: const BoxDecoration(color: GoalshopPalette.slate800),
             child: Column(
               children: [
-                Text(
-                  'Goalshop',
+                // 2. UPDATED DRAWER TITLE HERE
+                RichText(
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                  text: TextSpan(
+                    style: const TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'Goal',
+                        style: TextStyle(color: Colors.cyan[400]), // Goal -> Cyan
+                      ),
+                      TextSpan(
+                        text: 'shop',
+                        style: const TextStyle(color: Colors.white), // shop -> White
+                      ),
+                    ],
                   ),
                 ),
-                Padding(padding: EdgeInsets.all(10)),
-                Text(
+                const Padding(padding: EdgeInsets.all(10)),
+                const Text(
                   "Seluruh produk terkini di sini!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 15,
-                    color: Colors.white,
+                    color: Colors.white, 
                     fontWeight: FontWeight.normal,
                   ),
                 ),

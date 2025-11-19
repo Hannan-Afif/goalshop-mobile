@@ -1,6 +1,7 @@
 import 'package:goalshop/screens/menu.dart';
 import 'package:goalshop/screens/register.dart';
 import 'package:flutter/material.dart';
+import 'package:goalshop/palette/goalshop_palette.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
 
@@ -42,7 +43,8 @@ class _LoginPageState extends State<LoginPage> {
     final request = context.watch<CookieRequest>();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
+      backgroundColor: GoalshopPalette.slate900,
+      // appBar: AppBar(title: const Text('Login')),
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
@@ -102,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
 
                       // Check credentials
                       // To connect Android emulator with Django on localhost, use URL http://10.0.2.2/
-                      // If you using chrome,  use URL http://localhost:8000
+                      // If you using chrome,  use URL http://localhost:8000 //hannan-afif-goalshop.pbp.cs.ui.ac.id
                       final response = await request.login(
                         "http://localhost:8000/auth/login/",
                         {'username': username, 'password': password},
@@ -150,7 +152,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
                       minimumSize: Size(double.infinity, 50),
-                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      backgroundColor: GoalshopPalette.slate700,
                       padding: const EdgeInsets.symmetric(vertical: 16.0),
                     ),
                     child: const Text('Login'),
@@ -168,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Text(
                       'Don\'t have an account? Register',
                       style: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        // color: Theme.of(context).colorScheme.primary,
                         fontSize: 16.0,
                       ),
                     ),

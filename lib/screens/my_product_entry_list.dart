@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:goalshop/models/product_entry.dart';
+import 'package:goalshop/palette/goalshop_palette.dart';
 import 'package:goalshop/widgets/left_drawer.dart';
 import 'package:goalshop/screens/product_detail.dart';
 import 'package:goalshop/widgets/product_entry_card.dart';
@@ -37,7 +38,7 @@ class _MyProductEntryListPageState extends State<MyProductEntryListPage> {
   Widget build(BuildContext context) {
     final request = context.watch<CookieRequest>();
     return Scaffold(
-      appBar: AppBar(title: const Text('Product Entry List')),
+      appBar: AppBar(title: const Text('My Product Entry List'),),
       drawer: const LeftDrawer(),
       body: FutureBuilder(
         future: fetchProduct(request),

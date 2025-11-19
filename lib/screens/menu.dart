@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goalshop/palette/goalshop_palette.dart';
 import 'package:goalshop/widgets/left_drawer.dart';
 import 'package:goalshop/widgets/product_card.dart';
 
@@ -22,13 +23,28 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       // AppBar adalah bagian atas halaman yang menampilkan judul.
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
         // Judul aplikasi "Goalshop" dengan teks putih dan tebal.
-        title: const Text(
-          'Goalshop',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        title: RichText(
+          text: TextSpan(
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 22, // Standard AppBar font size
+            ),
+            children: [
+              TextSpan(
+                text: 'Goal',
+                style: TextStyle(color: Colors.cyan[400]), // Goal -> Cyan
+              ),
+              TextSpan(
+                text: 'shop',
+                style: const TextStyle(color: Colors.white), // shop -> White
+              ),
+            ],
+          ),
         ),
         // Warna latar belakang AppBar diambil dari skema warna tema aplikasi.
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: GoalshopPalette.slate800,
       ),
       drawer: LeftDrawer(),
       // Body halaman dengan padding di sekelilingnya.

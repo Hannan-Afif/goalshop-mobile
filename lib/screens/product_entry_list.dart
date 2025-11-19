@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:goalshop/models/product_entry.dart';
+import 'package:goalshop/palette/goalshop_palette.dart';
 import 'package:goalshop/widgets/left_drawer.dart';
 import 'package:goalshop/screens/product_detail.dart';
 import 'package:goalshop/widgets/product_entry_card.dart';

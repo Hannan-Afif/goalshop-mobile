@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goalshop/palette/goalshop_palette.dart';
 import 'package:goalshop/widgets/left_drawer.dart';
 import 'package:goalshop/screens/menu.dart';
 import 'dart:convert';
@@ -35,7 +36,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Center(child: Text('Add Product')),
-        backgroundColor: Colors.indigo,
+        backgroundColor: GoalshopPalette.slate800,
         foregroundColor: Colors.white,
       ),
       drawer: LeftDrawer(),
@@ -213,7 +214,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.indigo),
+                      backgroundColor: MaterialStateProperty.all(GoalshopPalette.slate700),
                     ),
                     onPressed: () async {
                       if (_formKey.currentState!.validate()) {
